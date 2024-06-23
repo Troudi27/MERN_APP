@@ -2,20 +2,25 @@ import { useState, useEffect } from "react";
 import Axios from "axios";
 
 export default function App() {
-  const [users, setUsers] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await Axios.get("http://localhost:3001/users");
-        setUsers(res.data);
-      } catch (error) {
-        console.error("Error fetching data", error);
-      }
-    };
+  const [users,setUsers] = useState([])
 
-    fetchData();
-  }, []);
+  // useEffect(()=>{
+  // },[])
+
+  useEffect(()=>{
+    Axios.get("http://localhost:3001/users")
+    .then(res =>{
+     setUsers(res.data)
+    })
+  },[])
+
+
+  //  const xx =[
+  //   {name:"houssem", age:34, email:"xx@xx.com"},
+  //   {name:"amine", age:34, email:"xx@xx.com"},
+  //   {name:"mouna", age:34, email:"xx@xx.com"},
+  // ]
 
   return (
     <>
