@@ -15,13 +15,11 @@ export default function App() {
     })
   },[])
 
-
   //  const xx =[
   //   {name:"houssem", age:34, email:"xx@xx.com"},
   //   {name:"amine", age:34, email:"xx@xx.com"},
   //   {name:"mouna", age:34, email:"xx@xx.com"},
   // ]
-
   return (
     <>
       {users.map((user, index) => (
